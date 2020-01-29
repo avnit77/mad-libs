@@ -1,5 +1,6 @@
 import React from 'react';
+import Madlib from '../containers/Madlib';
 
 export default function App() {
-  return <h1>Hello World test change</h1>;
+  return <Madlib />;
 }
