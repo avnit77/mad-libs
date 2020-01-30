@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Form from '../components/madlib/Form';
 import Result from '../components/madlib/Result';
+import Header from '../components/Common/Header';
+import Footer from '../components/Common/Footer';
 
 export default class Madlib extends Component{
   state = {
@@ -50,8 +52,10 @@ export default class Madlib extends Component{
       const { showResult } = this.state;
       return (
         <>
+          <Header />
           {!showResult && <Form onSubmit={this.handleSubmit} onChange={this.handleChange} />}
           {showResult && <Result words={this.state.words} closeResult={this.toggleResult} />}
+          <Footer />
         </>
       );
     }
