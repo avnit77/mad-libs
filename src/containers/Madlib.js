@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../components/madlib/Form';
 import Result from '../components/madlib/Result';
-import Header from '../components/Common/Header';
-import Footer from '../components/Common/Footer';
 
 export default class Madlib extends Component{
   state = {
@@ -19,43 +17,29 @@ export default class Madlib extends Component{
     nine: '',
     ten: '',
     eleven: '',
-    twelve: ''
+    twelve: '',
+    thirteen: ''
   }
 
-  toggleResult = () =>
-    this.setState(state => ({ ...state, showResult: !state.showResult }));
-
-    handleChange = event => {
-      this.setState({ one: event.target.value });
-      this.setState({ two: event.target.value });
-      this.setState({ three: event.target.value });
-      this.setState({ four: event.target.value });
-      this.setState({ five: event.target.value });
-      this.setState({ six: event.target.value });
-      this.setState({ seven: event.target.value });
-      this.setState({ eight: event.target.value });
-      this.setState({ nine: event.target.value });
-      this.setState({ ten: event.target.value });
-      this.setState({ eleven: event.target.value });
-      this.setState({ twelve: event.target.value });
+    handleChange = ({ target }) => {
+      this.setState({ [target.name]: target.value });
     }
+
+    toggleResult = () =>
+      this.setState(state => ({ ...state, showResult: !state.showResult }));
 
     handleSubmit = event => {
       event.preventDefault();
       this.toggleResult();
-      this.setState(state => ({
-        words: [state.one, state.two, state.three, state.four, state.five, state.six, state.seven, state.eight, state.nine, state.ten, state.eleven, state.twelve]
-      }));
+      this.setState({ words: [this.state.one, this.state.two, this.state.three, this.state.four, this.state.five, this.state.six, this.state.seven, this.state.eight, this.state.nine, this.state.ten, this.state.eleven, this.state.twelve, this.state.thirteen] });
     }
 
     render() {
       const { showResult } = this.state;
       return (
         <>
-          <Header />
-          {!showResult && <Form onSubmit={this.handleSubmit} onChange={this.handleChange} />}
+          {!showResult && <Form handleChange={this.handleChange} onSubmit={this.handleSubmit}/>}
           {showResult && <Result words={this.state.words} closeResult={this.toggleResult} />}
-          <Footer />
         </>
       );
     }

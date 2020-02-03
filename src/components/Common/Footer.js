@@ -4,7 +4,8 @@ import styles from './Footer.css';
 const Footer = () => (
   <>
     <footer className={styles.Footer}>
-      <p>First stop, Madlibs, next stop, world domination.</p>
+      <img className={styles.logo} src="./src/assets/logo.png" />
+      <p>Created Stardate 73555.1</p>
     </footer>
   </>
 );

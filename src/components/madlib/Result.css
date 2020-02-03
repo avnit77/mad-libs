@@ -1,0 +1,22 @@
+.Result {
+    font-size: x-large;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 200px;
+    button {
+        background-color: black;
+        color: white;
+        border: solid 2px navy;
+        border-radius: 50%;
+        font-size: x-large;
+        padding: 10px
+    }
+    button:hover {
+        background-color: rgb(21, 21, 63);
+        border: black 5px solid;
+        font-style: italic;
+    }
+  }

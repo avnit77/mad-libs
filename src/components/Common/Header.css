@@ -1,4 +1,15 @@
 .Header {
-    background-image: url('../../assets/madlibs.png');
-    min-height: 100px;
+    min-height: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-bottom: 100px;
   }
+
+  .madlogo {
+    max-height: 300px;
+    margin-right: 100px;
+    margin-top: 20px;
+
+  }
+

@@ -1,40 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Form.css';
 
-const Form = ({ onChange, onSubmit, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve }) => (
-  <form onSubmit={onSubmit} onChange={onChange}>
-    <input type="text" placeholder="adjective" />
-    <input type="text" placeholder="noun" />
-    <input type="text"  placeholder="verb, past tense" />
-    <input type="text"  placeholder="adverb" />
-    <input type="text" placeholder="adjective" />
-    <input type="text"  placeholder="noun" />
-    <input type="text" placeholder="noun" />
-    <input type="text"  placeholder="adjective" />
-    <input type="text" placeholder="verb" />
-    <input type="text"  placeholder="adverb" />
-    <input type="text"  placeholder="verb, past tense" />
-    <input type="text"  placeholder="adjective" />
-    <button>Create Madlib</button>
+const Form = ({ onSubmit, handleChange }) => (
+  <form className={styles.Form} onSubmit={onSubmit}>
+    <input className={styles.input} type="text" name="one" placeholder="place" onChange={handleChange} />
+    <input className={styles.input} type="text" name="two" placeholder="noun" onChange={handleChange} />
+    <input className={styles.input} type="text" name="three" placeholder="adjective" onChange={handleChange} />
+    <input className={styles.input} type="text" name="four" placeholder="verb" onChange={handleChange} />
+    <input className={styles.input} type="text" name="five" placeholder="adjective" onChange={handleChange} />
+    <input className={styles.input} type="text" name="six" placeholder="adjective" onChange={handleChange} />
+    <input className={styles.input} type="text" name="seven" placeholder="plural noun" onChange={handleChange} />
+    <input className={styles.input} type="text" name="eight" placeholder="adjective" onChange={handleChange} />
+    <input className={styles.input} type="text" name="nine" placeholder="noun" onChange={handleChange} />
+    <input className={styles.input} type="text" name="ten" placeholder="adjective" onChange={handleChange} />
+    <input className={styles.input} type="text" name="eleven" placeholder="plural noun" onChange={handleChange} />
+    <input className={styles.input} type="text" name="twelve" placeholder="adverb" onChange={handleChange} />
+    <input className={styles.input} type="text" name="thirteen" placeholder="noun" onChange={handleChange} />
+    <button className={styles.button} >Create Madlib</button>
+    <button className={styles.button} type='reset' >Reset</button>
   </form>
 );
 
 Form.propTypes = {
-  text: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  one: PropTypes.string.isRequired,
-  two: PropTypes.string.isRequired,
-  three: PropTypes.string.isRequired,
-  four: PropTypes.string.isRequired,
-  five: PropTypes.string.isRequired,
-  six: PropTypes.string.isRequired,
-  seven: PropTypes.string.isRequired,
-  eight: PropTypes.string.isRequired,
-  nine: PropTypes.string.isRequired,
-  ten: PropTypes.string.isRequired,
-  eleven: PropTypes.string.isRequired,
-  twelve: PropTypes.string.isRequired
+  handleChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default Form;

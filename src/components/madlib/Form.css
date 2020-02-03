@@ -1,0 +1,28 @@
+.Form {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    max-width: 600px;
+    margin-left: 40vw;
+    input {
+        height: 40px;
+        background-color: rgba(46, 62, 112, 0.541);
+        color: white;
+
+        &::placeholder {
+            color: black;
+    }
+  }
+    button {
+    font-size: large;
+    background-color: rgba(67, 76, 131, 0.705);
+}
+    button:hover {
+    background-color: rgba(26, 24, 59, 0.787);
+    color: whitesmoke;
+}
+
+}
